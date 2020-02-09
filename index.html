@@ -2,29 +2,70 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Project: Blog</title>
+        <title>Project: lloger</title>
         <style>
             body {
                 font-size: 15px;
             }
             
+            .mediaType {
+            	font-family: Arial, sans-serif;
+            	font-size: 1.1em;
+            	color: red;
+            }
         </style>
     </head>
     <body>
         
-        <h1>___'s blog</h1>
+        <h1>Lifetime Logs</h1>
 
         <h3>Contents</h3>
         <ul>
-            <a href="#firstPost"><li>First post!</li></a>
-            
+            <a href="#booksSection"><li>Books</li></a>
+            <a href="#moviesSection"><li>Movies</li></a>
         </ul>
         
-        <h2 id="firstPost">First post</h2>
-        <h6>Posted on some date in some year</h6>
-        
-        <p>Something excited happened.</p>
-        
+        <h2 id="booksSection">Books</h2>
+        <h6>These are the <em class="mediaType">books</em> you've read in the last year</h6>
+        <table>
+        	<thead>
+        		<tr>
+        			<th>Name</th>
+        			<th>Date</th>
+        			<th>Rating</th>
+        			<th>Notes</th>
+        		</tr>
+        	</thead>
+        	<tbody>
+        		<tr>
+        			<td>Brave New World</td>
+        			<td>12/12/12</td>
+        			<td>5 stars</td>
+        			<td>I liked it</td>
+        		</tr>
+        	</tbody>
+        </table>
+
+        <h2 id="moviesSection">Movies</h2>
+        <h6>These are the <em class="mediaType">movies</em> you've seen in the last year</h6>
+        <table>
+        	<thead>
+        		<tr>
+        			<th>Name</th>
+        			<th>Date</th>
+        			<th>Rating</th>
+        			<th>Notes</th>
+        		</tr>
+        	</thead>
+        	<tbody>
+        		<tr>
+        			<td>Looper</td>
+        			<td>12/12/12</td>
+        			<td>5 stars</td>
+        			<td>I liked it</td>
+        		</tr>
+        	</tbody>
+        </table>        
         
     </body>
 </html>
