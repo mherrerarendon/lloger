@@ -2,11 +2,11 @@ import unittest
 
 import app as api
 from flask import Flask
+import requests
 
 app = Flask(__name__)
 
 class TestAPIs(unittest.TestCase):
-
     def test_get_MovieLogs(self):
         movieLogsTest = [
             {
@@ -24,8 +24,9 @@ class TestAPIs(unittest.TestCase):
         ]
 
         with app.app_context():
-            import pdb; pdb.set_trace()  # breakpoint 81e5f918 //
-            self.assertEqual(api.get_MovieLogs(), movieLogsTest)
+            resp = requests.get('http://localhost:5000/api/v1.0/movieLogs')
+            self.assertEqual(resp.status_code, 200)
+            self.assertEqual(resp.json(), movieLogsTest)
 
     # def test_isupper(self):
     #     self.assertTrue('FOO'.isupper())
