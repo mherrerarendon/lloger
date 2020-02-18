@@ -13,6 +13,20 @@
             	font-size: 1.1em;
             	color: red;
             }
+
+            div.sectionDiv {
+            	/* background-color: #A06262 */
+            	max-width: 40em;
+				border: 1px solid #333;
+				box-shadow: 8px 8px 5px #444;
+				padding: 8px 12px;
+				background-image: linear-gradient(180deg, #fff, #ddd 40%, #ccc);
+            }
+
+            #mainContainer {
+            	margin: auto;
+            	width: 50%;
+            }
         </style>
     </head>
     <body>
@@ -21,51 +35,68 @@
 
         <h3>Contents</h3>
         <ul>
-            <a href="#booksSection"><li>Books</li></a>
-            <a href="#moviesSection"><li>Movies</li></a>
+            <a href="#bookSectionDiv"><li>Books</li></a>
+            <a href="#movieSectionDiv"><li>Movies</li></a>
         </ul>
         
-        <h2 id="booksSection">Books</h2>
-        <h6>These are the <em class="mediaType">books</em> you've read in the last year</h6>
-        <table>
-        	<thead>
-        		<tr>
-        			<th>Name</th>
-        			<th>Date</th>
-        			<th>Rating</th>
-        			<th>Notes</th>
-        		</tr>
-        	</thead>
-        	<tbody>
-        		<tr>
-        			<td>Brave New World</td>
-        			<td>12/12/12</td>
-        			<td>5 stars</td>
-        			<td>I liked it</td>
-        		</tr>
-        	</tbody>
-        </table>
+        <div id="mainContainer">
+        	<div class="sectionDiv" id="bookSectionDiv">
+	        	<h2>Books</h2>
+		        <h6>These are the <em class="mediaType">books</em> you've read in the last year</h6>
+		        <table>
+		        	<thead>
+		        		<tr>
+		        			<th>Name</th>
+		        			<th>Date</th>
+		        			<th>Rating</th>
+		        			<th>Notes</th>
+		        		</tr>
+		        	</thead>
+		        	<tbody>
+		        		<tr>
+		        			<td>Brave New World</td>
+		        			<td>12/12/12</td>
+		        			<td>5 stars</td>
+		        			<td>I liked it</td>
+		        		</tr>
+		        	</tbody>
+		        </table>
+	        </div>
+	        
+	        <div class="sectionDiv" id="movieSectionDiv">
+	        	<h2>Movies</h2>
+		        <h6>These are the <em class="mediaType">movies</em> you've seen in the last year</h6>
+		        <table>
+		        	<thead>
+		        		<tr>
+		        			<th>Name</th>
+		        			<th>Date</th>
+		        			<th>Rating</th>
+		        			<th>Notes</th>
+		        		</tr>
+		        	</thead>
+		        	<tbody>
+		        		<tr>
+		        			<td>Looper</td>
+		        			<td>12/12/12</td>
+		        			<td>5 stars</td>
+		        			<td>I liked it</td>
+		        		</tr>
+		        	</tbody>
+		        </table>
+	        </div>
+        </div>
 
-        <h2 id="moviesSection">Movies</h2>
-        <h6>These are the <em class="mediaType">movies</em> you've seen in the last year</h6>
-        <table>
-        	<thead>
-        		<tr>
-        			<th>Name</th>
-        			<th>Date</th>
-        			<th>Rating</th>
-        			<th>Notes</th>
-        		</tr>
-        	</thead>
-        	<tbody>
-        		<tr>
-        			<td>Looper</td>
-        			<td>12/12/12</td>
-        			<td>5 stars</td>
-        			<td>I liked it</td>
-        		</tr>
-        	</tbody>
-        </table>        
+        <button id="clicker">Boring button</button>
         
+        <!-- <<script src="/javascripts/application.js" type="text/javascript" charset="utf-8" async defer></script> -->
+        <script>
+        	console.log("Wheeee!"); // This is inspectable in the console
+   //      	document.getElementById(id)
+			// document.getElementsByClassName(className)
+			// document.getElementsByTagName(tagName)
+			// document.querySelector(cssSelector)
+			// document.querySelectorAll(cssSelector)
+        </script>
     </body>
 </html>
