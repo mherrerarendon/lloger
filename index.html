@@ -27,19 +27,48 @@
             	margin: auto;
             	width: 50%;
             }
+
+            .descriptionLabel {
+            }
         </style>
     </head>
     <body>
-        
         <h1>Lifetime Logs</h1>
-
-        <h3>Contents</h3>
-        <ul>
-            <a href="#bookSectionDiv"><li>Books</li></a>
-            <a href="#movieSectionDiv"><li>Movies</li></a>
-        </ul>
-        
+        <table>
+        	<tbody>
+        		<tr>
+        			<td><button id="logActivity">Log Activity</button></td>
+        			<td>
+        				<select id="activityTypePopup">
+				            <option value="movieType">Movie</option>
+				            <option value="bookType">Book</option>
+				        </select>
+        			</td>
+        		</tr>
+        		<tr>
+        			<td><label class="descriptionLabel">Name:</label></td>
+        			<td><input id="nameEdit" type="text"></td>
+        		</tr>
+        		<tr>
+        			<td><label class="descriptionLabel">Date:</label></td>
+        			<td><input id="dateEdit" type="text"></td>
+        		</tr>
+        		<tr>
+        			<td><label class="descriptionLabel">Rating:</label></td>
+        			<td><input id="ratingEdit" type="text"></td>
+        		</tr>
+        		<tr>
+        			<td><label class="descriptionLabel">Notes:</label></td>
+        			<td><input id="notesEdit" type="text"></td>
+        		</tr>
+        	</tbody>
+        </table>
         <div id="mainContainer">
+        	<h3>Contents</h3>
+	        <ul>
+	            <a href="#bookSectionDiv"><li>Books</li></a>
+	            <a href="#movieSectionDiv"><li>Movies</li></a>
+	        </ul>
         	<div class="sectionDiv" id="bookSectionDiv">
 	        	<h2>Books</h2>
 		        <h6>These are the <em class="mediaType">books</em> you've read in the last year</h6>
@@ -66,7 +95,7 @@
 	        <div class="sectionDiv" id="movieSectionDiv">
 	        	<h2>Movies</h2>
 		        <h6>These are the <em class="mediaType">movies</em> you've seen in the last year</h6>
-		        <table>
+		        <table id="movieSectionTable">
 		        	<thead>
 		        		<tr>
 		        			<th>Name</th>
@@ -87,16 +116,36 @@
 	        </div>
         </div>
 
-        <button id="clicker">Boring button</button>
+        <div id="testOutput"></div>
         
         <!-- <<script src="/javascripts/application.js" type="text/javascript" charset="utf-8" async defer></script> -->
         <script>
-        	console.log("Wheeee!"); // This is inspectable in the console
+        	var logActivityButton = document.getElementById("logActivity");
+        	var onLogActivityButtonClicked = function() {
+        		var movieTable = document.getElementById("movieSectionTable");
+        		var row = movieTable.insertRow(-1);
+				row.insertCell(-1).textContent = document.getElementById("nameEdit").value;
+				row.insertCell(-1).textContent = document.getElementById("dateEdit").value;
+				row.insertCell(-1).textContent = document.getElementById("ratingEdit").value;
+				row.insertCell(-1).textContent = document.getElementById("notesEdit").value;
+
+				clearTextFields();
+        	};
+        	logActivityButton.addEventListener("click", onLogActivityButtonClicked);
+
+        	var clearTextFields = function() {
+        		document.getElementById("nameEdit").value = "";
+				document.getElementById("dateEdit").value = "";
+				document.getElementById("ratingEdit").value = "";
+				document.getElementById("notesEdit").value = "";
+        	}
+        	// console.log("Wheeee!"); // This is inspectable in the console
    //      	document.getElementById(id)
 			// document.getElementsByClassName(className)
 			// document.getElementsByTagName(tagName)
 			// document.querySelector(cssSelector)
 			// document.querySelectorAll(cssSelector)
         </script>
+        <!-- <script type="text/javascript" src="js-file.js"></script> -->
     </body>
 </html>
